@@ -1,6 +1,14 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
+  getFirstCardInfo();
+  getSecondCardInfo();
+  return 0;
+}
+
+int getFirstCardInfo()
+{
   char firstCardState;
   char firstCardCode[3];
   char firstCardCity[20];
@@ -8,14 +16,8 @@ int main() {
   float firstCardArea;
   float firstCardPIB;
   int firstCardTouristicPoints;
-
-  char secondCardState;
-  char secondCardCode[3];
-  char secondCardCity[20];
-  int secondCardPopulation;
-  float secondCardArea;
-  float secondCardPIB;
-  int secondCardTouristicPoints;
+  float firstCardPopulationDensity;
+  float firstCardPIBperCapita;
 
   printf("Vamos começar nosso jogo, primeiro pediremos que digite as informações da primeira carta.\n");
 
@@ -40,6 +42,33 @@ int main() {
   printf("Digite a quantidade de pontos turísticos na cidade da primeira carta: ");
   scanf("%d", &firstCardTouristicPoints);
 
+  firstCardPopulationDensity = firstCardPopulation / firstCardArea;
+
+  printf("Essa é a carta número 1:\n");
+  printf("Carta 1:\n");
+  printf("Estado: %c\n", firstCardState);
+  printf("Código: %s\n", firstCardCode);
+  printf("Nome da Cidade: %s\n", firstCardCity);
+  printf("População: %d\n", firstCardPopulation);
+  printf("Área: %f km²\n", firstCardArea);
+  printf("PIB: %f bilhões de reais\n", firstCardPIB);
+  printf("Número de Pontos Turísticos: %d\n", firstCardTouristicPoints);
+  printf("Densidade Populacional: %d hab/km²\n", firstCardPopulationDensity);
+  printf("PIB per Capita: %d reais\n");
+}
+
+int getSecondCardInfo()
+{
+  char secondCardState;
+  char secondCardCode[3];
+  char secondCardCity[20];
+  int secondCardPopulation;
+  float secondCardArea;
+  float secondCardPIB;
+  int secondCardTouristicPoints;
+  float secondCardPopulationDensity;
+  float secondCardPIBperCapita;
+
   printf("\nAgora vamos para a segunda carta: \n");
 
   printf("Digite o Estado da segunda carta: ");
@@ -63,25 +92,18 @@ int main() {
   printf("Digite a quantidade de pontos turísticos na cidade da segunda carta: ");
   scanf("%d", &secondCardTouristicPoints);
 
-  printf("Essas são as cartas:\n");
+  secondCardPopulationDensity = secondCardPopulation / secondCardArea;
 
-  printf("Carta 1:\n");
-  printf("Estado: %c\n", firstCardState);
-  printf("Código: %s\n", firstCardCode);
-  printf("Nome da Cidade: %s\n", firstCardCity);
-  printf("População: %d\n", firstCardPopulation);
-  printf("Área: %f km²\n", firstCardArea); 
-  printf("PIB: %f bilhões de reais\n", firstCardPIB);
-  printf("Número de Pontos Turísticos: %d\n", firstCardTouristicPoints);
+  printf("Essas são as cartas:\n");
 
   printf("\nCarta 2:\n");
   printf("Estado: %c\n", secondCardState);
   printf("Código: %s\n", secondCardCode);
   printf("Nome da Cidade: %s\n", secondCardCity);
   printf("População: %d\n", secondCardPopulation);
-  printf("Área: %f km²\n", secondCardArea); 
+  printf("Área: %f km²\n", secondCardArea);
   printf("PIB: %f bilhões de reais\n", secondCardPIB);
   printf("Número de Pontos Turísticos: %d\n", secondCardTouristicPoints);
-  
-  return 0
+  printf("Densidade Populacional: %d hab/km²\n", secondCardPopulationDensity);
+  printf("PIB per Capita: %d reais\n");
 }
